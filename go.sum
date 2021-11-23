@@ -1,0 +1,8 @@
+github.com/mattn/go-sqlite3 v1.14.9 h1:10HX2Td0ocZpYEjhilsuo6WWtUqttj2Kb0KtD86/KYA=
+github.com/mattn/go-sqlite3 v1.14.9/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
+github.com/shr0048/gocsv v0.0.0-20211119091309-1ae3b12687a6 h1:4UgL4WrCzbu6VI6Nf0iKIU0nc2Af8/dVw/jLGZPftgw=
+github.com/shr0048/gocsv v0.0.0-20211119091309-1ae3b12687a6/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
+github.com/shr0048/gocsv v0.0.0-20211123065919-513015043684 h1:AD7+uClh1W7jDkIfTFI/hBn2+2k66k3KFiPnyC5JawY=
+github.com/shr0048/gocsv v0.0.0-20211123065919-513015043684/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
+github.com/shr0048/gocsv v0.0.0-20211123073701-9c224d2721c2 h1:UHH75i8/rOWF6FjBpN78vUb5Q44KPV7bFuiKi9diSZo=
+github.com/shr0048/gocsv v0.0.0-20211123073701-9c224d2721c2/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
