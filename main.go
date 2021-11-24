@@ -29,7 +29,7 @@ func main()  {
 		sep = ","
 	}
 
-	continuous := os.Args[4]
+	drop, _ := strconv.Atoi(os.Args[4])
 
 	mycsv := gocsv.CSV{}
 	err := mycsv.LoadCSV(filePath, sep, headerIdx)
@@ -45,7 +45,7 @@ func main()  {
 
 	h := &handler.Handler{MySql: Sql, MyFile: mycsv}
 
-	err = h.LoadFileToSQLite(continuous)
+	err = h.LoadFileToSQLite(drop)
 	if err != nil {
 		fmt.Println(err)
 	}

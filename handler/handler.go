@@ -13,8 +13,8 @@ type Handler struct {
 	MyFile gocsv.CSV
 }
 
-func (h *Handler) LoadFileToSQLite(continuous string) error {
-	if continuous == "0" {
+func (h *Handler) LoadFileToSQLite(drop int) error {
+	if drop == 1 {
 		// Drop table first, if exist
 		delQuery := "drop table if exists FileDump"
 		statement, _ := h.MySql.SQLClient.Prepare(delQuery)
