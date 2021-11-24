@@ -13,16 +13,18 @@ type Handler struct {
 	MyFile gocsv.CSV
 }
 
-func (h *Handler) LoadFileToSQLite() error {
-	// Drop table first, if exist
-	delQuery := "drop table if exists FileDump"
-	statement, _ := h.MySql.SQLClient.Prepare(delQuery)
-	res, err := statement.Exec()
-	if err != nil {
-		fmt.Println("Drop table error")
-		fmt.Println(err)
-	} else {
-		fmt.Println("Table exist, drop first")
+func (h *Handler) LoadFileToSQLite(continuous string) error {
+	if continuous == "0" {
+		// Drop table first, if exist
+		delQuery := "drop table if exists FileDump"
+		statement, _ := h.MySql.SQLClient.Prepare(delQuery)
+		_, err := statement.Exec()
+		if err != nil {
+			fmt.Println("Drop table error")
+			fmt.Println(err)
+		} else {
+			fmt.Println("Table exist, drop first")
+		}
 	}
 
 	baseQuery := fmt.Sprintf("create table FileDump (" +
@@ -39,8 +41,8 @@ func (h *Handler) LoadFileToSQLite() error {
 	}
 	fmt.Println(baseQuery)
 
-	statement, _ = h.MySql.SQLClient.Prepare(baseQuery)
-	res, err = statement.Exec()
+	statement, _ := h.MySql.SQLClient.Prepare(baseQuery)
+	res, err := statement.Exec()
 	if err != nil {
 		fmt.Println("Create table error")
 		fmt.Println(err)
