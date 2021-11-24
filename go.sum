@@ -6,3 +6,5 @@ github.com/shr0048/gocsv v0.0.0-20211123065919-513015043684 h1:AD7+uClh1W7jDkIfT
 github.com/shr0048/gocsv v0.0.0-20211123065919-513015043684/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
 github.com/shr0048/gocsv v0.0.0-20211123073701-9c224d2721c2 h1:UHH75i8/rOWF6FjBpN78vUb5Q44KPV7bFuiKi9diSZo=
 github.com/shr0048/gocsv v0.0.0-20211123073701-9c224d2721c2/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
+github.com/shr0048/gocsv v0.0.0-20211124053845-a254d7d01f30 h1:U4GD434XF4P9E2UIn9Pua9LDQ4Nmnokfnaunng8m/qQ=
+github.com/shr0048/gocsv v0.0.0-20211124053845-a254d7d01f30/go.mod h1:eQ+w/8T+p+ncPlnU8XkHAgMO+9RH2fMkpsxL/aGtHPA=
