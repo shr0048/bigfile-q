@@ -1,4 +1,7 @@
+import os
 import sys
+from os.path import isfile, join
+from os import listdir
 
 
 def divide_file(filepath, header):
@@ -47,4 +50,16 @@ if __name__ == "__main__":
 
     header = get_header(csv_file, header_idx)
     divide_file(csv_file, header)
+
+    dir_path = "./csvs"
+    onlyfiles = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
+    for idx, file in enumerate(onlyfiles):
+        print(f"start {idx} file load on Sqlite")
+
+        if idx == 0:
+            print("First")
+            os.system(f"./main csvs/{file} {sep} {header_idx} 1")
+        else:
+            print(f"{idx}")
+            os.system(f"./main csvs/{file} {sep} {header_idx} 0")
 

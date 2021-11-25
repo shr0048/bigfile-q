@@ -45,9 +45,11 @@ func main()  {
 
 	h := &handler.Handler{MySql: Sql, MyFile: mycsv}
 
-	err = h.LoadFileToSQLite(drop)
-	if err != nil {
-		fmt.Println(err)
+	if drop == 1 {
+		err = h.LoadFileToSQLite()
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 
 	err = h.InsertRows()

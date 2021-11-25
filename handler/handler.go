@@ -13,18 +13,16 @@ type Handler struct {
 	MyFile gocsv.CSV
 }
 
-func (h *Handler) LoadFileToSQLite(drop int) error {
-	if drop == 1 {
-		// Drop table first, if exist
-		delQuery := "drop table if exists FileDump"
-		statement, _ := h.MySql.SQLClient.Prepare(delQuery)
-		_, err := statement.Exec()
-		if err != nil {
-			fmt.Println("Drop table error")
-			fmt.Println(err)
-		} else {
-			fmt.Println("Table exist, drop first")
-		}
+func (h *Handler) LoadFileToSQLite() error {
+	// Drop table first, if exist
+	delQuery := "drop table if exists FileDump"
+	statement, _ := h.MySql.SQLClient.Prepare(delQuery)
+	_, err := statement.Exec()
+	if err != nil {
+		fmt.Println("Drop table error")
+		fmt.Println(err)
+	} else {
+		fmt.Println("Table exist, drop first")
 	}
 
 	baseQuery := fmt.Sprintf("create table FileDump (" +
@@ -41,7 +39,7 @@ func (h *Handler) LoadFileToSQLite(drop int) error {
 	}
 	fmt.Println(baseQuery)
 
-	statement, _ := h.MySql.SQLClient.Prepare(baseQuery)
+	statement, _ = h.MySql.SQLClient.Prepare(baseQuery)
 	res, err := statement.Exec()
 	if err != nil {
 		fmt.Println("Create table error")
@@ -89,7 +87,7 @@ func (h *Handler) InsertRows() error {
 	}
 
 	query := fmt.Sprintf("INSERT INTO 'FileDump' (%s) VALUES %s", subQuery1, strings.Join(values, ","))
-	fmt.Println(query)
+	//fmt.Println(query)
 
 	statement, _ := h.MySql.SQLClient.Prepare(query)
 	_, err := statement.Exec()
