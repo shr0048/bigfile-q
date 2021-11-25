@@ -87,8 +87,6 @@ func (h *Handler) InsertRows() error {
 	}
 
 	query := fmt.Sprintf("INSERT INTO 'FileDump' (%s) VALUES %s", subQuery1, strings.Join(values, ","))
-	//fmt.Println(query)
-
 	statement, _ := h.MySql.SQLClient.Prepare(query)
 	_, err := statement.Exec()
 	if err != nil {
